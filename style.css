@@ -284,7 +284,7 @@ main.pricing_container {
 @media (min-width: 520px) {
   /* Container styles */
   main.pricing_container {
-    margin-block: 13vmin 0;
+    margin-block: 14vmin 0;
   }
 
   /* Wrapper styles */
