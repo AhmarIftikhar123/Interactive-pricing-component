@@ -1,0 +1,402 @@
+:root {
+  /* Colors */
+  --soft_cyan: hsl(174, 77%, 80%);
+  --strong_cyan: hsl(174, 86%, 45%);
+  --light_grayish_red: hsl(14, 92%, 95%);
+  --light_red: hsl(15, 100%, 70%);
+  --pale_blue: hsl(226, 100%, 87%);
+  --white: hsl(0, 0%, 100%);
+  --very_pale_blue: hsl(230, 100%, 99%);
+  --light_grayish_blue: hsl(224, 65%, 95%);
+  --toggle_background: hsl(223, 50%, 87%);
+  --grayish_blue: hsl(225, 20%, 60%);
+  --dark_desaturated_blue: hsl(227, 35%, 25%);
+  /* font Weights */
+  --f_w_600: 600;
+  --f_w_800: 800;
+}
+
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope";
+}
+
+/* Set base font size to 10px (62.5% of 16px) for easy rem calculations */
+html {
+  font-size: 62.5%;
+}
+
+/* Ensure body takes at least the full viewport height */
+body {
+  min-height: 100dvh;
+  background-color: var(--light_grayish_blue);
+}
+
+/* @font-face rule for custom fonts */
+@font-face {
+  font-family: "Manrope";
+  src: url("Fonts/Manrope-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("Fonts/Manrope-ExtraBold.ttf");
+  font-weight: 800;
+}
+
+header {
+  position: relative;
+}
+/* General container for the pricing section */
+main.pricing_container {
+  flex-direction: column;
+  text-align: center;
+  margin-block: 11vmax 0;
+  width: 100%;
+}
+
+/* Main heading for the pricing section */
+.pricing_heading {
+  font-size: 2.025rem;
+}
+
+/* Text describing the free trial offer */
+.trial_text {
+  color: var(--grayish_blue);
+  margin-block: 0.75rem 0;
+  line-height: 2.25rem;
+  font-size: 1.275rem;
+  font-weight: var(--f_w_600);
+}
+
+.pattern_img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Wrapper element for the pricing tiers section */
+.pricing_wrapper {
+  margin-block: 6.5rem 0;
+  background-color: var(--very_pale_blue);
+  width: 87%;
+  border-radius: 1rem;
+  filter: drop-shadow(1px 1px 20px var(--pale_blue));
+}
+
+/* Individual pricing tier section */
+.pricing_tier {
+  padding: 3.5rem 2.25rem;
+  display: grid;
+  gap: 4rem;
+}
+
+/* Slider */
+
+#usage-slider[type="range"] {
+  appearance: none;
+  background-color: var(--soft_cyan);
+  height: 8px;
+  border-radius: 1rem;
+}
+#usage-slider[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  background: var(--strong_cyan) url(images/icon-slider.svg) no-repeat center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+#usage-slider[type="range"]::-webkit-slider-thumb:hover {
+  box-shadow: 0 10px 20px 5px hsl(174, 77%, 80%);
+}
+
+/* Heading for the pricing tier (e.g., 100K PAGEVIEWS) */
+.tier_heading {
+  font-size: 1.25rem;
+  font-weight: var(--f_w_800);
+  letter-spacing: 0.125rem;
+}
+
+/* Price displayed for the tier */
+.tier_price {
+  font-size: 3rem;
+}
+
+.half_TrialText {
+  display: block;
+}
+
+#tier_price {
+  justify-content: center;
+  gap: 1.25rem;
+}
+/* Text indicating the billing period (e.g., /month) */
+.tier_duration {
+  font-weight: var(--f_w_600);
+  font-size: 1.35rem;
+}
+
+/* Container for billing options */
+.Billing_box {
+  position: relative;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Text describing the billing cycle (e.g., Monthly Billing) */
+.price_billing {
+  font-size: 1.15rem;
+}
+/* Switch  */
+
+/* Genel stil */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+/* Giriş stil */
+.toggle-switch .toggle-input {
+  display: none;
+}
+
+/* Anahtarın stilinin etrafındaki etiketin stil */
+.toggle-switch .toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 43px;
+  height: 23px;
+  background-color: var(--toggle_background);
+  border-radius: 34px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Anahtarın yuvarlak kısmının stil */
+.toggle-switch .toggle-label::before {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+/* Anahtarın etkin hale gelmesindeki stil değişiklikleri */
+.toggle-switch .toggle-input:checked + .toggle-label {
+  background-color: var(--strong_cyan);
+}
+
+.toggle-switch .toggle-input:checked + .toggle-label::before {
+  transform: translateX(20px);
+}
+
+/* Light tema */
+.toggle-switch.light .toggle-label {
+  background-color: #bebebe;
+}
+
+.toggle-switch.light .toggle-input:checked + .toggle-label {
+  background-color: #9b9b9b;
+}
+
+.toggle-switch.light .toggle-input:checked + .toggle-label::before {
+  transform: translateX(4px);
+}
+
+/* Dark tema */
+.toggle-switch.dark .toggle-label {
+  background-color: #4b4b4b;
+}
+
+.toggle-switch.dark .toggle-input:checked + .toggle-label {
+  background-color: #717171;
+}
+
+.toggle-switch.dark .toggle-input:checked + .toggle-label::before {
+  transform: translateX(16px);
+}
+
+/* Text indicating discount for yearly billing */
+.dicount {
+  color: var(--light_red);
+  background-color: var(--light_grayish_red);
+  display: inline-block;
+  font-size: 1rem;
+  width: 3.25rem;
+  border-radius: 1rem;
+  margin-left: 0.5rem;
+  position: absolute;
+}
+
+/* Class for hidden text (likely used for screen readers) */
+.hide {
+  display: none;
+}
+
+/* Footer section containing pricing features */
+.tier_features {
+  margin-top: 6.25rem;
+}
+
+/* Unordered list element within the tier features section */
+.List {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Individual list item for a pricing benefit */
+.benefits {
+  font-size: 1.2rem;
+  list-style: none;
+}
+
+/* Global styles */
+.benefits img {
+  margin-right: 1rem;
+}
+
+/* Button styles */
+#trial_btn {
+  font-size: 1.25rem;
+  font-weight: var(--f_w_600);
+  margin: 3.15rem;
+  width: 51%;
+  border: none;
+  background-color: var(--dark_desaturated_blue);
+  color: var(--very_pale_blue);
+  padding: 1.25rem;
+  border-radius: 2rem;
+}
+
+/* Media query for screens wider than 520px */
+@media (min-width: 520px) {
+  /* Container styles */
+  main.pricing_container {
+    margin-block: 13vmin 0;
+  }
+
+  /* Wrapper styles */
+  .pricing_wrapper {
+    max-width: 54rem;
+    margin-block: 9rem 0;
+  }
+
+  /* Pricing heading styles */
+  .pricing_heading {
+    font-size: 2.8rem;
+  }
+
+  /* Half trial text styles */
+  .half_TrialText {
+    display: inline;
+  }
+
+  /* Trial text styles */
+  .trial_text {
+    font-size: 1.5rem;
+    margin-block: 1.15rem 0;
+  }
+
+  /* Pricing tier styles */
+  .pricing_tier {
+    padding: 4rem 4.75rem;
+    grid-template-areas: "grid_1 grid_3" "grid_2 grid_2";
+    gap: 4rem 2rem;
+  }
+
+  /* Grid item styles */
+  .pricing_tier > * {
+    align-self: center;
+  }
+
+  /* Tier heading styles */
+  .tier_heading {
+    grid-area: grid_1;
+    font-size: 1.5rem;
+    margin-right: auto;
+    margin-right: auto;
+  }
+
+  /* Tier price styles */
+  #tier_price {
+    margin-left: auto;
+  }
+
+  /* Usage slider styles */
+  #usage-slider[type="range"] {
+    grid-area: grid_2;
+  }
+
+  /* Tier price styles */
+  .tier_price {
+    font-size: 4rem;
+  }
+
+  /* Tier duration styles */
+  .tier_duration {
+    font-size: 1.5rem;
+  }
+
+  /* Billing box styles */
+  .Billing_box {
+    margin-top: 1.25rem;
+  }
+
+  /* Tier features styles */
+  .tier_features {
+    display: grid;
+    place-items: center;
+    grid-auto-flow: column;
+    margin: 5.75rem -3rem 1.75rem;
+  }
+
+  /* Button styles */
+  #trial_btn {
+    width: 55%;
+  }
+
+  /* List styles */
+  .List {
+    align-items: baseline !important;
+  }
+}
+
+/* Global Color Classes */
+.grayish_blue {
+  color: var(--grayish_blue);
+}
+/* Global Classes */
+
+.flex_x_center {
+  display: flex;
+  align-items: center;
+}
+
+.flex_x_center_y_sp_bw {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pointer {
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.transition {
+  transition: all 0.2s ease-in-out;
+}

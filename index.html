@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags for character set and viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Title -->
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
+  <body>
+    <!-- Main container for pricing -->
+
+    <main class="pricing_container flex_x_center">
+      <!-- Header section -->
+      <header>
+        <!-- Pricing heading -->
+        <h1 class="pricing_heading">Simple, traffic-based pricing</h1>
+        <!-- Trial text -->
+        <h3 class="trial_text">
+          Sign-up for our 30-day trial.
+          <span class="half_TrialText">No credit card required.</span>
+        </h3>
+        <!-- Pattern circles image -->
+        <img
+          src="images/pattern-circles.svg"
+          alt="circles"
+          class="pattern_img"
+        />
+      </header>
+
+      <!-- Pricing wrapper section -->
+
+      <section class="pricing_wrapper">
+        <div class="pricing_tier">
+          <!-- Tier heading -->
+          <p class="tier_heading grayish_blue">100K PAGEVIEWS</p>
+
+          <!-- Slider for usage -->
+          <input
+            type="range"
+            min="1"
+            max="5"
+            id="usage-slider"
+            class="pointer transition"
+          />
+
+          <!-- Tier price and duration -->
+          <h1 id="tier_price" class="flex_x_center">
+            <span class="tier_price">$16.00</span>
+            <span class="tier_duration grayish_blue">/ month</span>
+          </h1>
+        </div>
+
+        <!-- Billing section -->
+        <div class="Billing_box flex_x_center">
+          <!-- Monthly billing text -->
+          <p class="price_billing grayish_blue">Monthly Billing</p>
+          <!-- Toggle switch for yearly billing -->
+          <div class="toggle-switch pointer">
+            <input class="toggle-input" id="toggle" type="checkbox" />
+            <label class="toggle-label" for="toggle"></label>
+          </div>
+          <!-- Yearly billing text with discount -->
+          <p class="price_billing grayish_blue">
+            Yearly Billing
+            <span class="dicount">25% <span class="hide">discount</span></span>
+          </p>
+        </div>
+
+        <!-- Footer section for tier features -->
+        <footer class="tier_features">
+          <ul class="List flex_x_center">
+            <!-- Benefit: Unlimited websites -->
+            <li class="benefits grayish_blue">
+              <img src="images/icon-check.svg" alt="check" /> Unlimited websites
+            </li>
+            <li class="benefits grayish_blue">
+              <img src="images/icon-check.svg" alt="check" /> 100% data
+              ownership
+            </li>
+            <li class="benefits grayish_blue">
+              <img src="images/icon-check.svg" alt="check" /> Email reports
+            </li>
+          </ul>
+
+          <!-- Button for starting trial -->
+          <button id="trial_btn" class="pointer transition">
+            Start my trial
+          </button>
+        </footer>
+      </section>
+    </main>
+
+    <!-- Script for interaction -->
+    <script src="script.js"></script>
+  </body>
+</html>
